@@ -1,0 +1,31 @@
+body {
+  margin: 20px;
+}
+
+.card {
+  height: 230px;
+  width: 200px;
+  margin: 15px;
+}
+
+.cardArea {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.img {
+  height: 180px;
+  width: 100%;
+}
+
+.itemP {
+  margin: 0;
+  text-align: left;
+  overflow-wrap: break-word;
+}
