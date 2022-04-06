@@ -1,4 +1,3 @@
-import { useHistory } from "react-router-dom";
 import "../../styles.css";
 import { ItemCard } from "../ogarnisms/Items/ItemCard";
 
@@ -11,13 +10,6 @@ const items = [...Array(10).keys()].map((val) => {
 });
 
 export const Recommendation = () => {
-  const history = useHistory();
-
-  // 商品押下
-  const onClickItem = () => {
-    history.push("/home/ItemInfo");
-  };
-
   return (
     <>
       <div>
@@ -40,9 +32,14 @@ export const Recommendation = () => {
         >
           閲覧した商品からのおすすめ
         </h2>
-        <div className="cardArea" onClick={onClickItem}>
+        <div className="cardArea">
           {items.map((item) => (
-            <ItemCard key={item.id} item={item} />
+            <ItemCard
+              key={item.id}
+              id={item.id}
+              image={item.image}
+              itemName={item.itemName}
+            />
           ))}
         </div>
         <div>
@@ -56,9 +53,14 @@ export const Recommendation = () => {
             おすすめ商品
           </h2>
 
-          <div className="cardArea" onClick={onClickItem}>
+          <div className="cardArea">
             {items.map((item) => (
-              <ItemCard key={item.id} item={item} />
+              <ItemCard
+                key={item.id}
+                id={item.id}
+                image={item.image}
+                itemName={item.itemName}
+              />
             ))}
           </div>
         </div>

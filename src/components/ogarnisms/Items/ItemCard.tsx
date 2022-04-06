@@ -1,9 +1,16 @@
+import { Link } from "react-router-dom";
+
 export const ItemCard = (props) => {
-  const { item } = props;
+  const { id, image, itemName } = props;
+
   return (
-    <div className="card">
-      <img alt={item.itemName} className="img" src={item.image} />
-      <p className="itemP">{item.itemName}</p>
-    </div>
+    <Link
+      style={{ textDecoration: "none", color: "black" }}
+      to={{ pathname: "/home/itemInfo", state: props }}
+      className="card"
+    >
+      <img alt={id} className="img" src={image} />
+      <p className="itemP">{itemName}</p>
+    </Link>
   );
 };
