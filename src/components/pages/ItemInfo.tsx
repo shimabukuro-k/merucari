@@ -8,31 +8,98 @@ export const ItemInfo = () => {
 
   return (
     <>
-      <button onClick={onClickBack}>&lt;</button>
-      <div>
-        <div style={{ width: "50%", float: "left" }}>
-          <div style={{ float: "left" }}>
-            <img
-              alt={state.id}
-              style={{ height: "100px", width: "100px" }}
-              src={state.image}
-            />
+      <button
+        onClick={onClickBack}
+        style={{ marginTop: "110px", position: "fixed", top: 0, left: 20 }}
+      >
+        &lt;
+      </button>
+      <div style={{ maxWidth: "1000px", margin: "110px auto 0 auto" }}>
+        <div>
+          <div style={{ width: "50%", float: "left" }}>
+            <div style={{ float: "left" }}>
+              <img
+                alt={state.id}
+                style={{ maxHeight: "60px", maxWidth: "60px" }}
+                src={state.image}
+              />
+              <br />
+              <img
+                alt={state.id}
+                style={{ maxHeight: "60px", maxWidth: "60px" }}
+                src={state.image}
+              />
+              <br />
+              <img
+                alt={state.id}
+                style={{ maxHeight: "60px", maxWidth: "60px" }}
+                src={state.image}
+              />
+              <br />
+            </div>
+
+            <div
+              style={{
+                float: "right",
+                width: "400px",
+                height: "400px",
+                backgroundColor: "#666",
+                margin: 0
+              }}
+            >
+              <img
+                alt={state.id}
+                style={{
+                  maxHeight: "400px",
+                  maxWidth: "400px",
+                  marginLeft: "40px"
+                }}
+                src={state.image}
+              />
+            </div>
           </div>
-          <div style={{ height: "592px", width: "592px", float: "right" }}>
-            <img
-              alt={state.id}
-              style={{ height: "100%", width: "100%" }}
-              src={state.image}
-            />
+
+          <div
+            style={{
+              float: "right",
+              maxWidth: "400px",
+              maxHeight: "400px"
+            }}
+          >
+            <h1 style={{ margin: 0 }}>{state.itemName}</h1>
+            <h2>商品説明</h2>
+            <p>あああああああああああ</p>
+            <p>あああああああああああ</p>
+            <p>あああああああああああ</p>
+            <p>あああああああああああ</p>
+            <p>あああああああああああ</p>
+            <h2>商品情報</h2>
+            <p>いいいいいいいいいいい</p>
+            <p>いいいいいいいいいいい</p>
+            <p>いいいいいいいいいいい</p>
+            <p>いいいいいいいいいいい</p>
+            <p>いいいいいいいいいいい</p>
+            <p>いいいいいいいいいいい</p>
+            <h2>出品者</h2>
+            <p>うううううううううううううう</p>
+            <p>うううううううううううううう</p>
+            <p>うううううううううううううう</p>
+            <p>うううううううううううううう</p>
+            <p>うううううううううううううう</p>
+            <p>うううううううううううううう</p>
+            <h2>コメント</h2>
+            <p>えええええええええええ</p>
+            <p>えええええええええええ</p>
+            <p>えええええええええええ</p>
+            <p>えええええええええええ</p>
+            <p>えええええええええええ</p>
           </div>
         </div>
 
-        <div style={{ float: "right" }}>
-          <h1>{state.itemName}</h1>
-          <h2>商品説明</h2>
-          <h2>商品情報</h2>
-          <h2>出品者</h2>
-          <h2>コメント</h2>
+        <div className="clear" />
+
+        <div>
+          <h2>この商品を見ている人におすすめ</h2>
         </div>
       </div>
     </>

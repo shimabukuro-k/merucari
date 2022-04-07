@@ -2,6 +2,14 @@ body {
   margin: 20px;
 }
 
+.top {
+  margin-top: 110px;
+}
+
+.clear {
+  clear: both;
+}
+
 .card {
   height: 230px;
   width: 200px;

@@ -12,7 +12,10 @@ const items = [...Array(10).keys()].map((val) => {
 export const Recommendation = () => {
   return (
     <>
-      <div>
+      <div
+        className="top"
+        style={{ maxWidth: "1000px", margin: "130px auto 0 auto" }}
+      >
         <div
           style={{
             height: "100px",
