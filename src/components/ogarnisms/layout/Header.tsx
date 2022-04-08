@@ -1,45 +1,49 @@
 import { memo, VFC } from "react";
 import { Link } from "react-router-dom";
 
+import { Button } from "../../atoms/button/Button";
+import { InputText } from "../../atoms/input/InputText";
+
 export const Header: VFC = memo(() => {
   return (
-    <header
-      style={{
-        height: "auto",
-        width: "100%",
-        borderBottom: "2px solid #ccc",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        backgroundColor: "white"
-      }}
-    >
-      <div style={{ float: "left", margin: "10px" }}>
-        <button style={{ margin: "5px" }}>mercari</button>
-        <input placeholder="なにをお探しですか？" style={{ margin: "5px" }} />
+    <header>
+      <div
+        style={{
+          margin: "10px"
+        }}
+      >
+        <div style={{ float: "left" }}>
+          <button style={{ margin: "15px" }}>mercari</button>
+        </div>
+        <InputText placeholder="なにをお探しですか？" />
+
+        <div style={{ float: "right" }}>
+          <Link to="/home/info" className="linkbutton">
+            お知らせ
+          </Link>
+          <Link to="/home/todo" className="linkbutton">
+            やることリスト
+          </Link>
+          <Link to="/home/account" className="linkbutton">
+            アカウント
+          </Link>
+          <Button>出品</Button>
+        </div>
+        <div className="clear" />
       </div>
-
-      <div style={{ float: "right", margin: "10px" }}>
-        <Link to="/home/info" style={{ margin: "5px" }}>
-          お知らせ
-        </Link>
-        <Link to="/home/todo" style={{ margin: "5px" }}>
-          やることリスト
-        </Link>
-        <Link to="/home/account" style={{ margin: "5px" }}>
-          アカウント
-        </Link>
-        <button style={{ margin: "5px" }}>出品</button>
-      </div>
-
-      <div className="clear" />
-
       <br />
 
+      {/* コンポーネント化する */}
       <div style={{ maxWidth: "1000px", margin: "auto" }}>
-        <Link to="/home/Recommendation">おすすめ</Link>
-        <Link to="/home/mylist">マイリスト</Link>
-        <Link to="/home/pickup">ピックアップ</Link>
+        <Link to="/home/Recommendation" className="linkbutton">
+          おすすめ
+        </Link>
+        <Link to="/home/mylist" className="linkbutton">
+          マイリスト
+        </Link>
+        <Link to="/home/pickup" className="linkbutton">
+          ピックアップ
+        </Link>
       </div>
     </header>
   );

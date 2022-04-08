@@ -14,25 +14,25 @@ export const ItemInfo = () => {
       >
         &lt;
       </button>
-      <div style={{ maxWidth: "1000px", margin: "110px auto 0 auto" }}>
+      <div style={{ maxWidth: "1000px", margin: "130px auto 0 auto" }}>
         <div>
           <div style={{ width: "50%", float: "left" }}>
             <div style={{ float: "left" }}>
               <img
                 alt={state.id}
-                style={{ maxHeight: "60px", maxWidth: "60px" }}
+                style={{ height: "60px", width: "60px" }}
                 src={state.image}
               />
               <br />
               <img
                 alt={state.id}
-                style={{ maxHeight: "60px", maxWidth: "60px" }}
+                style={{ height: "60px", width: "60px" }}
                 src={state.image}
               />
               <br />
               <img
                 alt={state.id}
-                style={{ maxHeight: "60px", maxWidth: "60px" }}
+                style={{ height: "60px", width: "60px" }}
                 src={state.image}
               />
               <br />
@@ -40,19 +40,18 @@ export const ItemInfo = () => {
 
             <div
               style={{
-                float: "right",
+                float: "left",
                 width: "400px",
                 height: "400px",
                 backgroundColor: "#666",
-                margin: 0
+                marginLeft: "20px"
               }}
             >
               <img
                 alt={state.id}
                 style={{
-                  maxHeight: "400px",
-                  maxWidth: "400px",
-                  marginLeft: "40px"
+                  height: "400px",
+                  width: "400px"
                 }}
                 src={state.image}
               />
