@@ -1,16 +1,11 @@
-import { memo, useContext, VFC } from "react";
+import { memo, VFC } from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "../../atoms/button/Button";
 import { InputText } from "../../atoms/input/InputText";
-import { UserContext } from "../../../providers/UseProvider";
 
 export const Header: VFC = memo(() => {
-  const { headInfo, setHeadInfo } = useContext(UserContext);
-
-  const onClickHead = () => {
-    setHeadInfo(true);
-  };
+  const viewFlg = false;
 
   return (
     <header>
@@ -25,13 +20,13 @@ export const Header: VFC = memo(() => {
         <InputText placeholder="なにをお探しですか？" />
 
         <div style={{ float: "right" }}>
-          <Link to="/home/info" className="linkbutton" onClick={onClickHead}>
+          <Link to="/home/info" className="linkbutton">
             お知らせ
           </Link>
-          <Link to="/home/todo" className="linkbutton" onClick={onClickHead}>
+          <Link to="/home/todo" className="linkbutton">
             やることリスト
           </Link>
-          <Link to="/home/account" className="linkbutton" onClick={onClickHead}>
+          <Link to="/home/account" className="linkbutton">
             アカウント
           </Link>
           <Button>出品</Button>
@@ -40,19 +35,15 @@ export const Header: VFC = memo(() => {
       </div>
       <br />
 
-      {headInfo && (
+      {viewFlg && (
         <div style={{ maxWidth: "1000px", margin: "auto" }}>
-          <Link
-            to="/home/Recommendation"
-            className="linkbutton"
-            onClick={onClickHead}
-          >
+          <Link to="/home/Recommendation" className="linkbutton">
             おすすめ
           </Link>
-          <Link to="/home/mylist" className="linkbutton" onClick={onClickHead}>
+          <Link to="/home/mylist" className="linkbutton">
             マイリスト
           </Link>
-          <Link to="/home/pickup" className="linkbutton" onClick={onClickHead}>
+          <Link to="/home/pickup" className="linkbutton">
             ピックアップ
           </Link>
         </div>

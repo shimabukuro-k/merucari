@@ -1,10 +1,19 @@
+import React, { useContext } from "react";
 import { useHistory, useLocation } from "react-router-dom";
+
+import { UserContext } from "../../providers/UseProvider";
 
 export const ItemInfo = () => {
   const { state } = useLocation();
 
+  const { setHeadInfo } = useContext(UserContext);
+  setHeadInfo(false);
+
   const history = useHistory();
-  const onClickBack = () => history.goBack();
+  const onClickBack = () => {
+    history.goBack();
+    setHeadInfo(true);
+  };
 
   return (
     <>

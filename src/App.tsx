@@ -1,12 +1,12 @@
-import { BrowserRouter } from "react-router-dom";
 import "./styles.css";
 
 import { Router } from "./Router/Router";
+import { UseProvider } from "./providers/UseProvider";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <UseProvider>
       <Router />
-    </BrowserRouter>
+    </UseProvider>
   );
 }
