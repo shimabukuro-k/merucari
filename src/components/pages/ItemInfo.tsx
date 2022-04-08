@@ -23,7 +23,14 @@ export const ItemInfo = () => {
       >
         &lt;
       </button>
-      <div style={{ maxWidth: "1000px", margin: "130px auto 0 auto" }}>
+
+      <div
+        style={{
+          maxWidth: "1000px",
+          margin: "130px auto 0 auto",
+          backgroundColor: "red"
+        }}
+      >
         <div>
           <div style={{ width: "50%", float: "left" }}>
             <div style={{ float: "left" }}>
@@ -45,11 +52,12 @@ export const ItemInfo = () => {
                 src={state.image}
               />
               <br />
+              <div className="clear" />
             </div>
 
             <div
               style={{
-                float: "left",
+                float: "right",
                 width: "400px",
                 height: "400px",
                 backgroundColor: "#666",
@@ -65,6 +73,7 @@ export const ItemInfo = () => {
                 src={state.image}
               />
             </div>
+            <div className="clear" />
           </div>
 
           <div
@@ -102,9 +111,8 @@ export const ItemInfo = () => {
             <p>えええええええええええ</p>
             <p>えええええええええええ</p>
           </div>
+          <div className="clear" />
         </div>
-
-        <div className="clear" />
 
         <div>
           <h2>この商品を見ている人におすすめ</h2>
