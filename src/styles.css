@@ -7,6 +7,7 @@ header {
   top: 0;
   left: 0;
   background-color: white;
+  z-index: 10000;
 }
 
 footer {
@@ -72,4 +73,26 @@ body {
 
 .linkbutton:hover {
   background-color: #eeeeee;
+}
+
+.bule {
+  background-color: royalblue;
+}
+
+.red {
+  background-color: red;
+}
+
+.imageLeft {
+  width: 50%;
+  float: left;
+  position: fixed;
+  position: sticky;
+  top: 130px;
+}
+
+.divStyle {
+  max-width: 1000px;
+  margin: 130px auto 0 auto;
+  height: auto;
 }

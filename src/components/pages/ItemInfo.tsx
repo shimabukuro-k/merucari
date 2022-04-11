@@ -2,6 +2,15 @@ import React, { useContext } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
 import { UserContext } from "../../providers/UseProvider";
+import { ItemCard } from "../ogarnisms/Items/ItemCard";
+
+const items = [...Array(10).keys()].map((val) => {
+  return {
+    id: val,
+    image: "https://source.unsplash.com/random",
+    itemName: `長い商品名が来たら折り返して表示する_${val}`
+  };
+});
 
 export const ItemInfo = () => {
   const { state } = useLocation();
@@ -24,15 +33,10 @@ export const ItemInfo = () => {
         &lt;
       </button>
 
-      <div
-        style={{
-          maxWidth: "1000px",
-          margin: "130px auto 0 auto",
-          backgroundColor: "red"
-        }}
-      >
-        <div>
-          <div style={{ width: "50%", float: "left" }}>
+      <div className="divStyle">
+        <div className="red">
+          {/* 左がわ */}
+          <div className="imageLeft">
             <div style={{ float: "left" }}>
               <img
                 alt={state.id}
@@ -52,12 +56,11 @@ export const ItemInfo = () => {
                 src={state.image}
               />
               <br />
-              <div className="clear" />
             </div>
 
             <div
               style={{
-                float: "right",
+                float: "left",
                 width: "400px",
                 height: "400px",
                 backgroundColor: "#666",
@@ -79,8 +82,7 @@ export const ItemInfo = () => {
           <div
             style={{
               float: "right",
-              maxWidth: "400px",
-              maxHeight: "400px"
+              maxWidth: "400px"
             }}
           >
             <h1 style={{ margin: 0 }}>{state.itemName}</h1>
@@ -114,8 +116,19 @@ export const ItemInfo = () => {
           <div className="clear" />
         </div>
 
-        <div>
+        {/* 青背景 */}
+        <div className="bule">
           <h2>この商品を見ている人におすすめ</h2>
+          <div className="cardArea">
+            {items.map((item) => (
+              <ItemCard
+                key={item.id}
+                id={item.id}
+                image={item.image}
+                itemName={item.itemName}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </>
