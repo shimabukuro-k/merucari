@@ -41,7 +41,9 @@ export const Header: VFC = memo(() => {
       <br />
 
       {headInfo && (
-        <div style={{ maxWidth: "1000px", margin: "auto" }}>
+        <div
+          style={{ maxWidth: "1000px", margin: "auto", marginBottom: "10px" }}
+        >
           <Link
             to="/home/Recommendation"
             className="linkbutton"

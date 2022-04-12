@@ -14,7 +14,7 @@ export const Recommendation = () => {
     <>
       <div
         className="top"
-        style={{ maxWidth: "1000px", margin: "130px auto 0 auto" }}
+        style={{ maxWidth: "1000px", margin: "160px auto 0 auto" }}
       >
         <div
           style={{

@@ -1,5 +1,9 @@
 import { memo, VFC } from "react";
 
 export const Todo: VFC = memo(() => {
-  return <p>TODO画面</p>;
+  return (
+    <div className="top">
+      <p>TODO画面</p>
+    </div>
+  );
 });
