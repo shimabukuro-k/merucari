@@ -76,22 +76,6 @@ body {
   background-color: #eeeeee;
 }
 
-.bule {
-  background-color: royalblue;
-}
-
-.red {
-  background-color: red;
-}
-
-.imageLeft {
-  width: 50%;
-  float: left;
-  position: fixed;
-  position: sticky;
-  top: 130px;
-}
-
 .divStyle {
   max-width: 1000px;
   margin: 130px auto 0 auto;

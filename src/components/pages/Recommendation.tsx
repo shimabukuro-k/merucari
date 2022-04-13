@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 import "../../styles.css";
 import { ItemCard } from "../ogarnisms/Items/ItemCard";
 
@@ -12,30 +14,10 @@ const items = [...Array(10).keys()].map((val) => {
 export const Recommendation = () => {
   return (
     <>
-      <div
-        className="top"
-        style={{ maxWidth: "1000px", margin: "160px auto 0 auto" }}
-      >
-        <div
-          style={{
-            height: "100px",
-            width: "auto",
-            backgroundColor: "red",
-            margin: "20px 0 20px 0"
-          }}
-        >
-          広告が表示されているてい
-        </div>
-        <h2
-          style={{
-            color: "#666",
-            paddingBottom: "16px",
-            borderBottom: "solid 1px #ccc"
-          }}
-        >
-          閲覧した商品からのおすすめ
-        </h2>
-        <div className="cardArea">
+      <SBody>
+        <SAdvertisement>広告が表示されているてい</SAdvertisement>
+        <STitle>閲覧した商品からのおすすめ</STitle>
+        <SCardArea>
           {items.map((item) => (
             <ItemCard
               key={item.id}
@@ -44,19 +26,10 @@ export const Recommendation = () => {
               itemName={item.itemName}
             />
           ))}
-        </div>
+        </SCardArea>
         <div>
-          <h2
-            style={{
-              color: "#666",
-              paddingTop: "16px",
-              borderTop: "solid 1px #ccc"
-            }}
-          >
-            おすすめ商品
-          </h2>
-
-          <div className="cardArea">
+          <STitle>おすすめ商品</STitle>
+          <SCardArea>
             {items.map((item) => (
               <ItemCard
                 key={item.id}
@@ -65,9 +38,35 @@ export const Recommendation = () => {
                 itemName={item.itemName}
               />
             ))}
-          </div>
+          </SCardArea>
         </div>
-      </div>
+      </SBody>
     </>
   );
 };
+
+const SBody = styled.div`
+  margin-top: 160px;
+  max-width: 1000px;
+  margin: 160px auto 0 auto;
+`;
+
+const SAdvertisement = styled.div`
+  height: 100px;
+  width: auto;
+  background-color: red;
+  margin: 20px 0 20px 0;
+`;
+
+const STitle = styled.h2`
+  color: #666;
+  padding-bottom: 16px;
+  border-bottom: solid 1px #ccc;
+`;
+
+const SCardArea = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+`;
