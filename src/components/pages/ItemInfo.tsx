@@ -13,8 +13,6 @@ const items = [...Array(10).keys()].map((val) => {
   };
 });
 
-// 型定義
-
 export const ItemInfo = () => {
   const { state } = useLocation();
 
@@ -22,6 +20,7 @@ export const ItemInfo = () => {
   setHeadInfo(false);
 
   const history = useHistory();
+
   const onClickBack = () => {
     history.goBack();
     setHeadInfo(true);
@@ -95,7 +94,6 @@ export const ItemInfo = () => {
             <div className="clear" />
           </div>
 
-          {/* 青背景 */}
           <div>
             <h2>この商品を見ている人におすすめ</h2>
             <div className="cardArea">

@@ -1,11 +1,10 @@
-import { memo, VFC } from "react";
 import { Link } from "react-router-dom";
 
-export const Page: VFC = memo(() => {
+export const Page = () => {
   return (
     <>
-      <p className="top">検索サイト側</p>
-      <Link to="/home/recommendation">メルカリへ</Link>
+      <p className="top">検索サイト側のてい</p>
+      <Link to="/merucari/recommendation">メルカリへ</Link>
     </>
   );
-});
+};

@@ -64,18 +64,6 @@ body {
   overflow-wrap: break-word;
 }
 
-.linkbutton {
-  margin: 5px;
-  text-decoration: none;
-  color: black;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.linkbutton:hover {
-  background-color: #eeeeee;
-}
-
 .divStyle {
   max-width: 1000px;
   margin: 130px auto 0 auto;

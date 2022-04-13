@@ -1,4 +1,4 @@
-import { memo, ReactNode, VFC } from "react";
+import { ReactNode } from "react";
 
 import { Header } from "../ogarnisms/layout/Header";
 import { Footer } from "../ogarnisms/layout/Footer";
@@ -7,7 +7,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const HeaderLayout: VFC<Props> = memo((props) => {
+export const Default = (props: Props) => {
   const { children } = props;
   return (
     <>
@@ -16,4 +16,4 @@ export const HeaderLayout: VFC<Props> = memo((props) => {
       <Footer />
     </>
   );
-});
+};

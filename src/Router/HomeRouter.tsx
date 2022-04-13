@@ -1,4 +1,4 @@
-import { Home } from "../components/pages/Home";
+import { Merucari } from "../components/pages/Merucari";
 import { Auction } from "../components/pages/Auction";
 import { Info } from "../components/pages/Info";
 import { Login } from "../components/pages/Login";
@@ -14,7 +14,7 @@ export const HomeRouter = [
   {
     path: "/",
     exact: true,
-    children: <Home />
+    children: <Merucari />
   },
   {
     path: "/auction",

@@ -1,9 +1,9 @@
 import { memo, useContext, VFC } from "react";
-import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-import { Button } from "../../atoms/button/Button";
-import { InputText } from "../../atoms/input/InputText";
 import { UserContext } from "../../../providers/UseProvider";
+import { SearchInput } from "../../molecules/SearchInput";
+import { LinkButton } from "../../atoms/button/LinkButton";
 
 export const Header: VFC = memo(() => {
   const { headInfo, setHeadInfo } = useContext(UserContext);
@@ -19,24 +19,7 @@ export const Header: VFC = memo(() => {
           margin: "10px"
         }}
       >
-        <div style={{ float: "left" }}>
-          <button style={{ margin: "15px" }}>mercari</button>
-        </div>
-        <InputText placeholder="なにをお探しですか？" />
-
-        <div style={{ float: "right" }}>
-          <Link to="/home/info" className="linkbutton" onClick={onClickHead}>
-            お知らせ
-          </Link>
-          <Link to="/home/todo" className="linkbutton" onClick={onClickHead}>
-            やることリスト
-          </Link>
-          <Link to="/home/account" className="linkbutton" onClick={onClickHead}>
-            アカウント
-          </Link>
-          <Button>出品</Button>
-        </div>
-        <div className="clear" />
+        <SearchInput />
       </div>
       <br />
 
@@ -44,19 +27,15 @@ export const Header: VFC = memo(() => {
         <div
           style={{ maxWidth: "1000px", margin: "auto", marginBottom: "10px" }}
         >
-          <Link
-            to="/home/Recommendation"
-            className="linkbutton"
-            onClick={onClickHead}
-          >
+          <LinkButton to="/merucari/Recommendation" onClick={onClickHead}>
             おすすめ
-          </Link>
-          <Link to="/home/mylist" className="linkbutton" onClick={onClickHead}>
+          </LinkButton>
+          <LinkButton to="/merucari/mylist" onClick={onClickHead}>
             マイリスト
-          </Link>
-          <Link to="/home/pickup" className="linkbutton" onClick={onClickHead}>
+          </LinkButton>
+          <LinkButton to="/merucari/pickup" onClick={onClickHead}>
             ピックアップ
-          </Link>
+          </LinkButton>
         </div>
       )}
     </header>

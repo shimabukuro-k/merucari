@@ -27,6 +27,7 @@ export const Recommendation = () => {
             />
           ))}
         </SCardArea>
+
         <div>
           <STitle>おすすめ商品</STitle>
           <SCardArea>
