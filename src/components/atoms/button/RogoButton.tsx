@@ -5,11 +5,12 @@ import { BaseButton } from "./BaseButton";
 
 type Props = {
   children: ReactNode;
+  onClick: () => void;
 };
 
 export const RogoButton = (props: Props) => {
-  const { children } = props;
-  return <SButton>{children}</SButton>;
+  const { children, onClick } = props;
+  return <SButton onClick={onClick}>{children}</SButton>;
 };
 
 const SButton = styled(BaseButton)`

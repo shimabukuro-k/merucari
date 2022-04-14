@@ -1,43 +1,28 @@
-import { memo, useContext, VFC } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 
 import { UserContext } from "../../../providers/UseProvider";
 import { SearchInput } from "../../molecules/SearchInput";
-import { LinkButton } from "../../atoms/button/LinkButton";
 
-export const Header: VFC = memo(() => {
-  const { headInfo, setHeadInfo } = useContext(UserContext);
+import { HeaderBottom } from "../../molecules/HeaderBottom";
 
-  const onClickHead = () => {
-    setHeadInfo(true);
-  };
+// CSS関連
+const SBody = styled.div`
+  margin: 10px;
+  position: relative;
+`;
+
+export const Header = () => {
+  const { headInfo } = useContext<any>(UserContext);
 
   return (
     <header>
-      <div
-        style={{
-          margin: "10px"
-        }}
-      >
+      <SBody>
         <SearchInput />
-      </div>
+      </SBody>
       <br />
 
-      {headInfo && (
-        <div
-          style={{ maxWidth: "1000px", margin: "auto", marginBottom: "10px" }}
-        >
-          <LinkButton to="/merucari/Recommendation" onClick={onClickHead}>
-            おすすめ
-          </LinkButton>
-          <LinkButton to="/merucari/mylist" onClick={onClickHead}>
-            マイリスト
-          </LinkButton>
-          <LinkButton to="/merucari/pickup" onClick={onClickHead}>
-            ピックアップ
-          </LinkButton>
-        </div>
-      )}
+      {headInfo && <HeaderBottom />}
     </header>
   );
-});
+};

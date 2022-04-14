@@ -1,16 +1,22 @@
 import { ReactNode } from "react";
+
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 type Props = {
   children: ReactNode;
   to: string;
+  onClick: () => void;
 };
 
 export const LinkButton = (props: Props) => {
-  const { children, to } = props;
+  const { children, to, onClick } = props;
 
-  return <SLink to={to}>{children}</SLink>;
+  return (
+    <SLink to={to} onClick={onClick}>
+      {children}
+    </SLink>
+  );
 };
 
 export const SLink = styled(Link)`
