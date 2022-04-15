@@ -11,6 +11,25 @@ import { useContext, useState } from "react";
 import { AccountMenu } from "../ogarnisms/account/AccountMenu";
 import { useHistory } from "react-router-dom";
 
+// CSS関連
+const SContener = styled.div`
+  display: flex;
+  max-height: 40px;
+`;
+
+const SWrapperLeft = styled.div`
+  display: flex;
+  width: 50%;
+  min-width: 50%;
+  text-align: left;
+`;
+
+const SWrapperRight = styled.div`
+  width: 50%;
+  min-width: 50%;
+  text-align: right;
+`;
+
 export const SearchInput = () => {
   // ヘッダーの「おすすめ〜ピックアップ」
   const { setHeadInfo } = useContext<any>(UserContext);
@@ -28,31 +47,8 @@ export const SearchInput = () => {
   // アカウントメニューの表示・非表示
   const [AccountMenuFlg, setAccountMenuFlg] = useState(false);
   const onClickOpenMenu = () => {
-    if (AccountMenuFlg === true) {
-      setAccountMenuFlg(false);
-    } else {
-      setAccountMenuFlg(true);
-    }
+    setAccountMenuFlg(!AccountMenuFlg);
   };
-
-  // CSS関連
-  const SContener = styled.div`
-    display: flex;
-    max-height: 40px;
-  `;
-
-  const SWrapperLeft = styled.div`
-    display: flex;
-    width: 50%;
-    min-width: 50%;
-    text-align: left;
-  `;
-
-  const SWrapperRight = styled.div`
-    width: 50%;
-    min-width: 50%;
-    text-align: right;
-  `;
 
   return (
     <>

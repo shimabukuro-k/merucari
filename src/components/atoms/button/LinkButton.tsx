@@ -8,6 +8,16 @@ type Props = {
   to: string;
   onClick: () => void;
 };
+// css関連
+const SLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  &:hover {
+    background-color: #eeeeee;
+  }
+`;
 
 export const LinkButton = (props: Props) => {
   const { children, to, onClick } = props;
@@ -18,13 +28,3 @@ export const LinkButton = (props: Props) => {
     </SLink>
   );
 };
-
-export const SLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-  border-radius: 5px;
-  padding: 10px;
-  &:hover {
-    background-color: #eeeeee;
-  }
-`;

@@ -8,6 +8,9 @@ import { Recommendation } from "../components/pages/Recommendation";
 import { Register } from "../components/pages/Register";
 import { Todo } from "../components/pages/Todo";
 import { ItemInfo } from "../components/pages/ItemInfo";
+import { AccountInfo } from "../components/pages/AccountInfo";
+import { MyPage } from "../components/pages/MyPage";
+import { Favorites } from "../components/pages/Favorites";
 import { Page404 } from "../components/pages/Page404";
 
 export const HomeRouter = [
@@ -60,6 +63,21 @@ export const HomeRouter = [
     path: "/itemInfo",
     exact: false,
     children: <ItemInfo />
+  },
+  {
+    path: "/accountInfo",
+    exact: false,
+    children: <AccountInfo />
+  },
+  {
+    path: "/myPage",
+    exact: false,
+    children: <MyPage />
+  },
+  {
+    path: "/favorites",
+    exact: false,
+    children: <Favorites />
   },
   {
     path: "*",

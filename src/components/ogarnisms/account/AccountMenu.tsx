@@ -1,7 +1,8 @@
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 // CSS関連
-const SMenuBody = styled.ul`
+const SMenuBody = styled.div`
   border: 1px solid #ccc;
   border-radius: 2px;
   box-shadow: 0 0 7px #ccc;
@@ -14,40 +15,46 @@ const SMenuBody = styled.ul`
   right: 65px;
 `;
 
-const SLi = styled.li`
-  list-style: none;
-  margin: 0px;
-  padding: 10px;
+const SLinkBox = styled.div`
+  width: 100%;
+  padding: 10px 0px;
   border-bottom: 1px solid #ccc;
-  &:hover {
+  /* &:hover {
+    background-color: #eeeeee;
     cursor: pointer;
-    opacity: 0.8;
-  }
+  } */
 `;
 
-const SLiLast = styled.li`
-  list-style: none;
-  margin: 0px;
-  padding: 10px;
+const SLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  padding: 10px 0 10px 0;
+  padding:
   &:hover {
+    background-color: #eeeeee;
     cursor: pointer;
-    opacity: 0.8;
   }
 `;
 
 export const AccountMenu = () => {
-  const onClickMenu = () => {
-    alert("メニュー押下");
-  };
-
   return (
     <>
       <SMenuBody>
-        <SLi onClick={onClickMenu}>アカウントINFO</SLi>
-        <SLi>マイページ</SLi>
-        <SLi>いいね！した商品</SLi>
-        <SLi>出品した商品</SLi>
-        <SLiLast>購入した商品</SLiLast>
+        <SLinkBox>
+          <SLink to="/merucari/accountInfo">アカウントINFO</SLink>
+        </SLinkBox>
+        <SLinkBox>
+          <SLink to="/merucari/myPage">マイページ</SLink>
+        </SLinkBox>
+        <SLinkBox>
+          <SLink to="/merucari/favorites">いいね！した商品</SLink>
+        </SLinkBox>
+        <SLinkBox>
+          <SLink to="/merucari/accountInfo">出品した商品</SLink>
+        </SLinkBox>
+        <SLinkBox>
+          <SLink to="/merucari/accountInfo">購入した商品</SLink>
+        </SLinkBox>
       </SMenuBody>
     </>
   );
