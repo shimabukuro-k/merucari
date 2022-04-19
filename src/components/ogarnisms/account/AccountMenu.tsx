@@ -1,5 +1,9 @@
+import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
+
+import { UserContext } from "../../../providers/UseProvider";
+import { AccountIcon } from "../../molecules/AccountIcon";
 
 // CSS関連
 const SMenuBody = styled.div`
@@ -9,51 +13,55 @@ const SMenuBody = styled.div`
   background-color: #fff;
   width: 300px;
   height: auto;
-  padding: 5px 10px;
   position: absolute;
   top: 35px;
   right: 65px;
 `;
 
 const SLinkBox = styled.div`
-  width: 100%;
-  padding: 10px 0px;
-  border-bottom: 1px solid #ccc;
-  /* &:hover {
-    background-color: #eeeeee;
-    cursor: pointer;
-  } */
-`;
-
-const SLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-  padding: 10px 0 10px 0;
-  padding:
+  max-width: 100%;
+  padding: 0px 10px;
   &:hover {
     background-color: #eeeeee;
     cursor: pointer;
   }
 `;
 
+const SMenu = styled.div`
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+`;
+
 export const AccountMenu = () => {
+  const history = useHistory();
+
+  const { setHeadInfo } = useContext(UserContext);
+
+  const onClickMenu = (path: string) => {
+    history.push(`/merucari/${path}`);
+    setHeadInfo(false);
+  };
+
   return (
     <>
       <SMenuBody>
-        <SLinkBox>
-          <SLink to="/merucari/accountInfo">アカウントINFO</SLink>
+        <SLinkBox onClick={onClickMenu.bind(this, "accountInfo")}>
+          <SMenu>
+            <AccountIcon />
+          </SMenu>
         </SLinkBox>
-        <SLinkBox>
-          <SLink to="/merucari/myPage">マイページ</SLink>
+
+        <SLinkBox onClick={onClickMenu.bind(this, "myPage")}>
+          <SMenu>マイページ</SMenu>
         </SLinkBox>
-        <SLinkBox>
-          <SLink to="/merucari/favorites">いいね！した商品</SLink>
+        <SLinkBox onClick={onClickMenu.bind(this, "favorites")}>
+          <SMenu>いいね！した商品</SMenu>
         </SLinkBox>
-        <SLinkBox>
-          <SLink to="/merucari/accountInfo">出品した商品</SLink>
+        <SLinkBox onClick={onClickMenu.bind(this, "accountInfo")}>
+          <SMenu>出品した商品</SMenu>
         </SLinkBox>
-        <SLinkBox>
-          <SLink to="/merucari/accountInfo">購入した商品</SLink>
+        <SLinkBox onClick={onClickMenu.bind(this, "accountInfo")}>
+          <SMenu>購入した商品</SMenu>
         </SLinkBox>
       </SMenuBody>
     </>
