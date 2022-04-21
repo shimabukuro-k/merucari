@@ -1,9 +1,8 @@
 import { memo, VFC } from "react";
 
-export const MyList: VFC = memo(() => {
+export const MyList = () => {
   return (
     <div className="top">
-      <p>マイリスト画面</p>
       <div>
         <h2>保存した検索条件</h2>
         <p>保存している検索条件はありません</p>
@@ -26,4 +25,4 @@ export const MyList: VFC = memo(() => {
       </div>
     </div>
   );
-});
+};

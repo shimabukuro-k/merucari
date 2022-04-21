@@ -58,10 +58,10 @@ export const AccountMenu = () => {
           <SMenu>いいね！した商品</SMenu>
         </SLinkBox>
         <SLinkBox onClick={onClickMenu.bind(this, "accountInfo")}>
-          <SMenu>出品した商品</SMenu>
+          <SMenu>出品した商品(画面は特に実装しない)</SMenu>
         </SLinkBox>
         <SLinkBox onClick={onClickMenu.bind(this, "accountInfo")}>
-          <SMenu>購入した商品</SMenu>
+          <SMenu>購入した商品(画面は特に実装しない)</SMenu>
         </SLinkBox>
       </SMenuBody>
     </>
